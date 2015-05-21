@@ -1,0 +1,19 @@
+﻿input#method {
+	width:100px;
+}
+
+input#url {
+	width:350px;
+}
+
+input#dataType {
+	width:100px;
+}
+
+input#contentType {
+	width:100px;
+}
+
+input#data {
+	width:880px;
+}
