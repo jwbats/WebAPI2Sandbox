@@ -13,17 +13,15 @@ namespace WebAPI2Sandbox
 			config.MapHttpAttributeRoutes();
 
 			config.Routes.MapHttpRoute(
-				name: "ProductsApi",
-				routeTemplate: "api/{controller}/{id}",
-				defaults: new { id = RouteParameter.Optional },
-				constraints: new { controller = "products" }
+				"ProductsControllerRoute",
+				"api/products/{id}",
+				new { controller = "products", id = RouteParameter.Optional }
 			);
 
 			config.Routes.MapHttpRoute(
-				name: "PersonsApi",
-				routeTemplate: "api/{controller}/{action}/{id}",
-				defaults: new { id = RouteParameter.Optional },
-				constraints: new { controller = "persons" }
+				"PersonsControllerRoute",
+				"api/persons/{action}/{id}",
+				new { controller = "persons", id = RouteParameter.Optional }
 			);
 
 			// place non controller constrained routes here

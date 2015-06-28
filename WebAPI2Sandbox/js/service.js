@@ -19,14 +19,18 @@ $(function(){
 
 	function MakeRequest()
 	{
-		$("#output").html("Making request...");	
+		$("#output").html("Making request...");
+
+		var method = $("#method").val();
+		
+		var sendData = (method == "POST") || (method == "PUT");
 
 		service.Request(
 			$("#method").val(),
 			$("#url").val(),
 			$("#dataType").val(),
 			$("#contentType").val(),
-			$("#data").val()
+			(sendData) ? $("#data").val() : null
 		).fail(function(){
 			$("#output").html("Request failed.");
 		}).done(function(data){
